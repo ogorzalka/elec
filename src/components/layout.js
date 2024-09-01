@@ -5,47 +5,26 @@
  * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
  */
 
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react';
+//import { Link } from 'gatsby';
+import Header from "./header";
+import Seo from "../components/seo"
+import SchemaOrg from "./schema"
 
-import Header from "./header"
-import "./layout.css"
-
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+const Layout = ({ children }) => (
+  <div className="flex flex-col min-h-screen">
+    <Header />
+    <main className="flex-grow container mx-auto px-4 pt-28 pb-8">
+      <div class="rounded-lg overflow-hidden">
+        {children}
       </div>
-    </>
-  )
-}
+    </main>
+    <footer className="bg-gray-800 text-white">
+      <div className="container mx-auto px-4 py-6 text-center">
+        © {new Date().getFullYear()} Électricien Pro. Tous droits réservés.
+      </div>
+    </footer>
+  </div>
+);
 
-export default Layout
+export default Layout;

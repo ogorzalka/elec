@@ -9,13 +9,37 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Électricien professionnel dans le Pas-de-Calais`,
+    description: `Services d'électricité à Lens, Liévin, Arras, Béthune. Installation, rénovation et dépannage.`,
+    author: `Votre Nom`,
+    siteUrl: `https://www.votresite.fr`,
+    image: `/images/electricien-logo.png`,
+    social: {
+      twitter: `@votrecompte`,
+    },
+    organization: {
+      name: "Votre Nom d'Entreprise",
+      url: "https://www.votresite.fr",
+      logo: "https://www.votresite.fr/images/logo.png",
+      address: {
+        street: "Votre Adresse",
+        city: "Lens",
+        region: "Pas-de-Calais",
+        postalCode: "62300",
+        country: "FR"
+      },
+      geo: {
+        latitude: "50.4307",
+        longitude: "2.8319"
+      },
+      telephone: "votre_numéro_de_téléphone",
+      areaServed: ["Lens", "Liévin", "Arras", "Béthune", "Pas-de-Calais"]
+    },
   },
   plugins: [
+    'gatsby-plugin-postcss',
     `gatsby-plugin-image`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
