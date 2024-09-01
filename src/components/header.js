@@ -88,14 +88,14 @@ const Header = () => {
         {isOpen && (
           <nav className="md:hidden mt-4">
             <ul className="flex flex-col space-y-4">
-              {["Accueil", "Services", "Réalisations", "Contact"].map(item => (
-                <li key={item}>
-                  <Link
-                    to={item === "Accueil" ? "/" : `/${item.toLowerCase()}`}
+              {navItems.map((item) => (
+                <li key={item.name}>
+                  <Link 
+                    to={item.path}
                     className="text-white hover:text-yellow-400 transition duration-300 text-lg font-medium block"
                     onClick={() => setIsOpen(false)}
                   >
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}
