@@ -7,13 +7,9 @@ import Seo from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <div className="relative overflow-hidden">
-      {/* Formes d'arrière-plan */}
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-yellow-400 rounded-bl-full opacity-50 z-0"></div>
-      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-blue-500 rounded-tr-full opacity-50 z-0"></div>
-      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-purple-500 rounded-full opacity-30 z-0"></div>
-      
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between">
+      <div className="container mx-auto px-4 py-20 relative">
+         <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-yellow-400 rounded-bl-full opacity-50 z-0"></div>
+        <div className="flex flex-col lg:flex-row items-center justify-between relative z-10">
           <div className="lg:w-1/2 mb-10 lg:mb-0">
             <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
               Votre Électricien Pro dans le
@@ -60,8 +56,9 @@ const IndexPage = () => (
       </div>
 
       {/* Testimonials section */}
-      <div className="bg-gray-100 py-16 relative z-10">
-        <div className="container mx-auto px-4">
+      <div className="bg-gray-100 py-16">
+        <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-blue-500 rounded-tr-full opacity-50 z-0"></div>
+        <div className="container mx-auto px-4 relative relative z-10">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Ce que disent nos clients</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -79,8 +76,9 @@ const IndexPage = () => (
       </div>
 
       {/* Call to action */}
-      <div className="py-16 bg-gradient-to-r from-blue-500 to-purple-600 text-white relative z-10">
-        <div className="container mx-auto px-4 text-center">
+      <div className="py-16 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-purple-500 rounded-full opacity-30 z-0"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl font-bold mb-4">Prêt à améliorer votre installation électrique ?</h2>
           <p className="text-xl mb-8">Contactez-nous dès aujourd'hui pour un service d'excellence dans tout le Pas-de-Calais.</p>
           <Link
