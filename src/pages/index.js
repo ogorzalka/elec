@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
@@ -6,115 +6,91 @@ import Seo from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
-    {/* Hero Section */}
-    <section className="relative min-h-40 flex items-center overflow-hidden">
-      <StaticImage
-        src="https://picsum.photos/1600/900"
-        alt="Électricien au travail dans le Pas-de-Calais"
-        className="absolute inset-0 w-full h-full object-cover"
-        placeholder="blurred"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-600 opacity-80"></div>
-      <div className="relative z-10 text-white text-center mx-auto max-w-4xl px-4 py-20">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-          Électricien Pro dans le <span className="text-yellow-400">Pas-de-Calais</span>
-        </h1>
-        <p className="text-xl md:text-2xl mb-10 font-light">
-          Solutions électriques innovantes pour votre confort et sécurité à Lens, Liévin, Arras et Béthune
-        </p>
-        <Link to="/contact" className="bg-yellow-400 text-blue-900 font-bold py-4 px-8 rounded-full hover:bg-yellow-300 transition duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-          Obtenir un devis gratuit
-        </Link>
-      </div>
-    </section>
-
-    {/* Services Section */}
-    <section className="py-20 bg-gray-100">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16 text-blue-900">Nos Services d'Excellence</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {[
-            { title: "Installation Électrique", icon: "⚡", description: "Installations de pointe pour particuliers et professionnels à Lens et Liévin", link: "/services#installation" },
-            { title: "Rénovation et Mise aux Normes", icon: "🔧", description: "Modernisation experte de vos systèmes électriques à Arras et environs", link: "/services#renovation" },
-            { title: "Dépannage d'Urgence", icon: "🚨", description: "Intervention ultra-rapide 24/7 pour tous vos problèmes électriques à Béthune", link: "/services#depannage" },
-          ].map((service, index) => (
-            <div key={index} className="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
-              <div className="text-5xl mb-6">{service.icon}</div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-800">{service.title}</h3>
-              <p className="text-gray-600 mb-6">{service.description}</p>
-              <Link to={service.link} className="text-yellow-500 hover:text-yellow-600 font-semibold">En savoir plus →</Link>
+    <div className="relative overflow-hidden">
+      {/* Background shapes */}
+      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-yellow-400 rounded-bl-full opacity-50"></div>
+      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-blue-500 rounded-tr-full opacity-50"></div>
+      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-purple-500 rounded-full opacity-30"></div>
+      
+      <div className="container mx-auto px-4 py-20">
+        <div className="flex flex-col lg:flex-row items-center justify-between">
+          <div className="lg:w-1/2 mb-10 lg:mb-0">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
+              Votre Électricien Pro dans le
+              <span className="text-blue-600"> Pas-de-Calais</span>
+            </h1>
+            <p className="text-xl text-gray-600 mb-8">
+              Quels services électriques vous faut-il ? Nous créons des solutions sur mesure pour vos besoins.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+              {[
+                "Installation",
+                "Rénovation",
+                "Dépannage",
+                "Mise aux normes",
+                "Domotique",
+                "Éclairage LED",
+              ].map((service, index) => (
+                <div key={index} className="bg-white p-3 rounded-lg shadow-md text-center hover:bg-blue-50 transition duration-300">
+                  <span className="text-sm font-medium text-gray-700">{service}</span>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* Pourquoi nous choisir */}
-    <section className="py-20 bg-blue-900 text-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16">Pourquoi Nous Choisir ?</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
+            <Link
+              to="/contact"
+              className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+            >
+              Demandez un devis gratuit
+            </Link>
+          </div>
+          <div className="lg:w-1/2 relative">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-400 to-blue-500 rounded-full opacity-20 transform rotate-12"></div>
             <StaticImage
               src="https://picsum.photos/600/400"
-              alt="Notre équipe d'électriciens qualifiés dans le Pas-de-Calais"
-              className="rounded-lg shadow-xl"
+              alt="Électricien professionnel au travail"
+              className="rounded-lg shadow-2xl z-10 relative"
               placeholder="blurred"
+              layout="constrained"
+              width={600}
+              height={400}
             />
           </div>
-          <div>
-            <ul className="space-y-6">
-              {[
-                "15+ ans d'expertise dans le Pas-de-Calais",
-                "Équipe certifiée intervenant à Lens, Liévin, Arras et Béthune",
-                "Technologie de pointe pour des installations durables",
-                "Satisfaction client garantie sur tous nos travaux",
-                "Devis transparents et sans engagement",
-              ].map((item, index) => (
-                <li key={index} className="flex items-center text-lg">
-                  <svg className="h-6 w-6 text-yellow-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
+        </div>
+      </div>
+
+      {/* Testimonials section */}
+      <div className="bg-gray-100 py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Ce que disent nos clients</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { name: "Marie D., Lens", text: "Service exceptionnel et travail impeccable !" },
+              { name: "Pierre L., Arras", text: "Rénovation complète réalisée avec professionnalisme." },
+              { name: "Sophie M., Béthune", text: "Dépannage ultra-rapide, même un dimanche. Merci !" },
+            ].map((testimonial, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                <p className="text-gray-600 italic mb-4">"{testimonial.text}"</p>
+                <p className="font-semibold text-blue-600">{testimonial.name}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </section>
 
-    {/* Témoignages */}
-    <section className="py-20 bg-gray-100">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16 text-blue-900">Paroles de Clients Satisfaits</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {[
-            { name: "Marie D., Lens", text: "Service exceptionnel ! Installation impeccable et conseils précieux." },
-            { name: "Pierre L., Arras", text: "Rénovation complète réalisée avec professionnalisme. Résultat bluffant !" },
-            { name: "Sophie M., Béthune", text: "Dépannage ultra-rapide un dimanche. Disponibilité et efficacité au top !" },
-          ].map((testimonial, index) => (
-            <div key={index} className="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300">
-              <p className="text-gray-600 mb-6 italic">"{testimonial.text}"</p>
-              <p className="font-semibold text-blue-800">- {testimonial.name}</p>
-            </div>
-          ))}
+      {/* Call to action */}
+      <div className="py-16 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">Prêt à améliorer votre installation électrique ?</h2>
+          <p className="text-xl mb-8">Contactez-nous dès aujourd'hui pour un service d'excellence dans tout le Pas-de-Calais.</p>
+          <Link
+            to="/contact"
+            className="bg-yellow-400 text-blue-900 font-bold py-3 px-8 rounded-full hover:bg-yellow-300 transition duration-300 transform hover:-translate-y-1 hover:shadow-xl"
+          >
+            Contactez-nous maintenant
+          </Link>
         </div>
       </div>
-    </section>
-
-    {/* Call to Action */}
-    <section className="py-20 bg-gradient-to-r from-blue-800 to-blue-600 text-white">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold mb-6">Prêt à Transformer Votre Installation Électrique ?</h2>
-        <p className="text-xl mb-10 max-w-3xl mx-auto">
-          Contactez l'expert en électricité du Pas-de-Calais. De Lens à Béthune, nous sommes là pour concrétiser vos projets électriques.
-        </p>
-        <Link to="/contact" className="bg-yellow-400 text-blue-900 font-bold py-4 px-8 rounded-full hover:bg-yellow-300 transition duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-          Contactez-nous maintenant
-        </Link>
-      </div>
-    </section>
+    </div>
   </Layout>
 )
 
@@ -123,6 +99,6 @@ export const Head = () => (
     title="Électricien Pro Pas-de-Calais | Services à Lens, Liévin, Arras, Béthune"
     description="Expert en électricité offrant des services d'installation, rénovation et dépannage dans le Pas-de-Calais. Intervention rapide à Lens, Liévin, Arras, Béthune et environs."
   />
-);
+)
 
 export default IndexPage
