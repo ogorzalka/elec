@@ -59,7 +59,38 @@ const IndexPage = () => (
         </div>
       </div>
 
-      {/* Autres sections... */}
+      {/* Testimonials section */}
+      <div className="bg-gray-100 py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Ce que disent nos clients</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { name: "Marie D., Lens", text: "Service exceptionnel et travail impeccable !" },
+              { name: "Pierre L., Arras", text: "Rénovation complète réalisée avec professionnalisme." },
+              { name: "Sophie M., Béthune", text: "Dépannage ultra-rapide, même un dimanche. Merci !" },
+            ].map((testimonial, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                <p className="text-gray-600 italic mb-4">"{testimonial.text}"</p>
+                <p className="font-semibold text-blue-600">{testimonial.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Call to action */}
+      <div className="py-16 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">Prêt à améliorer votre installation électrique ?</h2>
+          <p className="text-xl mb-8">Contactez-nous dès aujourd'hui pour un service d'excellence dans tout le Pas-de-Calais.</p>
+          <Link
+            to="/contact"
+            className="bg-yellow-400 text-blue-900 font-bold py-3 px-8 rounded-full hover:bg-yellow-300 transition duration-300 transform hover:-translate-y-1 hover:shadow-xl"
+          >
+            Contactez-nous maintenant
+          </Link>
+        </div>
+      </div>
     </div>
   </Layout>
 )
