@@ -9,7 +9,7 @@ const IndexPage = () => (
     {/* Hero Section */}
     <section className="relative min-h-40 flex items-center overflow-hidden">
       <StaticImage
-        src="../images/electricien-travail.jpg"
+        src="https://picsum.photos/1600/900"
         alt="Électricien au travail dans le Pas-de-Calais"
         className="absolute inset-0 w-full h-full object-cover"
         placeholder="blurred"
@@ -56,7 +56,7 @@ const IndexPage = () => (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <StaticImage
-              src="../images/equipe-electriciens.jpg"
+              src="https://picsum.photos/600/400"
               alt="Notre équipe d'électriciens qualifiés dans le Pas-de-Calais"
               className="rounded-lg shadow-xl"
               placeholder="blurred"
