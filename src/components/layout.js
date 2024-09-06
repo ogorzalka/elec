@@ -8,16 +8,12 @@
 import React from 'react';
 //import { Link } from 'gatsby';
 import Header from "./header";
-import Seo from "../components/seo"
-import SchemaOrg from "./schema"
 
 const Layout = ({ children }) => (
   <div className="flex flex-col min-h-screen">
     <Header />
     <main className="flex-grow container mx-auto px-4 pt-28 pb-8">
-      <div class="rounded-lg overflow-hidden">
         {children}
-      </div>
     </main>
     <footer className="bg-gray-800 text-white">
       <div className="container mx-auto px-4 py-6 text-center">
